@@ -107,3 +107,5 @@ Please, note this format is used for Quiz and Task questions.
 - …
 
 Please use the “short” notation (don’t use constants). Example: O(nk) or O(wn) should be written O(n). If an answer is required within a file, all your answers files must have a newline at the end.
+
+Roberto Palacios [Twitter](https://twitter.com/robpalacios11) | [GitHub](https://github.com/robpalacios1) | Adrian Buelvas [Twitter](https://twitter.com/AdrianDeLaAsun1) | [Github](https://github.com/AdrianDeLaAsuncionBuelvas)
