@@ -1,5 +1,7 @@
-# :gear: 0x1B. C - Sorting algorithms & Big O :gear:
- 
+# :gear: Sorting algorithms & Big O :gear:
+
+![Error](https://miro.medium.com/max/2360/1*bPpvELo9_QqQsDz7CSbwXQ.gif)
+
 ### General
 - At least four different sorting algorithms
 - What is the Big O notation, and how to evaluate the time complexity of an algorithm
@@ -95,7 +97,13 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 ~~~
-Please, note this format is used for Quiz and Task questions.
+
+
+## Big O Notatiion
+### Concept
+Big O notation is used in Computer Science to describe the performance or complexity of an algorithm. Big O specifically describes the worst-case scenario, and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm
+
+![Error](https://i0.wp.com/www.jessicayung.com/wp-content/uploads/2016/08/screenshot-5.png?fit=1200%2C838&ssl=1)
 
 - O(1)
 - O(n)
@@ -105,8 +113,8 @@ Please, note this format is used for Quiz and Task questions.
 - n * log(n) -> O(nlog(n))
 - n + k -> O(n+k)
 - …
+![Error](https://zaxrosenberg.com/wp-content/uploads/2017/12/sort_complexity.png)
 
-Please use the “short” notation (don’t use constants). Example: O(nk) or O(wn) should be written O(n). If an answer is required within a file, all your answers files must have a newline at the end.
 
 ## Authors
 Roberto Palacios [Twitter](https://twitter.com/robpalacios11) | [GitHub](https://github.com/robpalacios1) | Adrian Buelvas [Twitter](https://twitter.com/AdrianDeLaAsun1) | [Github](https://github.com/AdrianDeLaAsuncionBuelvas)
