@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "sort.h"
 
 /**
  *
@@ -23,21 +23,31 @@ int partition(int *array, int low, int high)
 			swap(&array[i], &array[high]);
 		}
 	}
+	if (flag)
+	{
 	swap(&array[i +1], &array[high]);
-	print_array(array, size);
-
+	print_array(array, p);
+	}
 	return (i + 1);
 }
 
+
+void re_quick(int *array, int low, int high, size_t size)
+{
+	int pi = 0;
+
+	if (low < high)
+	{
+		int pi = partition(array, low, high);
+
+		quick_sort(array, low, pi - 1);
+		quick_sort(array, pi + 1, high);
+	}
+}
 void quick_sort(int *array, size_t size)
 {
-	size_t temp = 0;
+	if (!array)
+		return;
 
-	if (size < temp)
-	{
-		int p = partition(array, size, temp);
-
-		quick_sort(array, size, p - 1);
-		quick_sort(array, p + 1, size);
-	}
+	re_quick(array, 0, size -1, size);
 }
