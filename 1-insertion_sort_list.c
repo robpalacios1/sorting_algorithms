@@ -3,7 +3,6 @@
  *insertion_sort_list - function that sorts a doubly linked list
  *of integers in ascending order
  *@list: pointer to list doubly linked list
- *
  */
 void insertion_sort_list(listint_t **list)
 {
