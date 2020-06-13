@@ -58,9 +58,10 @@ void re_quick(int *array, int low, int high, size_t size)
 
 
 /**
- * quick_sort - function that sorts an array of integers in ascending order using the Quick sort algorithm
- *
- *
+ * quick_sort - function that sorts an array of integers in ascending \
+order using the Quick sort algorithm
+ * @array: input array
+ * @size: size length of array
  */
 
 void quick_sort(int *array, size_t size)
