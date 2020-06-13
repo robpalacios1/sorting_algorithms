@@ -1,21 +1,6 @@
 #include "sort.h"
 
 /**
- * swap - function to swapping values
- * @a: value one for swap
- *
- * @b: value two for swap
- */
-
-void swap(int *a, int *b)
-{
-	int temp = *a;
-
-	*a = *b;
-	*b = temp;
-}
-
-/**
  * selection_sort - sorts an array by repeatedly finding the minimum element \
 (considering ascending order) \
 from unsorted part and putting it at the beginning
@@ -47,4 +32,20 @@ void selection_sort(int *array, size_t size)
 		print_array(array, size);
 		}
 	}
+}
+
+
+/**
+ * swap - function to swapping values
+ * @a: value one for swap
+ *
+ * @b: value two for swap
+ */
+
+void swap(int *a, int *b)
+{
+	int temp = *a;
+
+	*a = *b;
+	*b = temp;
 }
