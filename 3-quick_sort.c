@@ -7,47 +7,53 @@
  *
  */
 
-int partition(int *array, int low, int high)
+int quick_partition(int *array, int low, int high, size_t size)
 {
 	int p = array[high];
 	int i = (low - 1);
-	int flag = 0;
+	int j, temp = 0;
 
-	for (int j = low; j <= high - 1; j++)
+	for (j = low; j < high - 1; j++)
 	{
-		flag = 0;
 		if (array[j] < p)
 		{
 			i++;
-			flag = 1;
-			swap(&array[i], &array[high]);
+			swap(&array[i], &array[j]);
+			if (array[j] != array[i])
+				print_array(array, size);
 		}
 	}
-	if (flag)
-	{
-	swap(&array[i +1], &array[high]);
-	print_array(array, p);
-	}
-	return (i + 1);
+	swap(&array[i + 1], &array[high]);
+	if (array[j] != array[i])
+		print_array(array, size);
+	temp = i +1;
+	return (temp);
 }
 
 
 void re_quick(int *array, int low, int high, size_t size)
 {
-	int pi = 0;
+	size_t pi = 0;
 
 	if (low < high)
 	{
-		int pi = partition(array, low, high);
+		pi = quick_partition(array, low, high, size);
 
-		quick_sort(array, low, pi - 1);
-		quick_sort(array, pi + 1, high);
+		re_quick(array, low, pi - 1, size);
+		re_quick(array, pi + 1, high, size);
 	}
 }
+
+/**
+ *
+ *
+ *
+ */
+
 void quick_sort(int *array, size_t size)
 {
-	if (!array)
+	if (!array || size <2)
 		return;
 
-	re_quick(array, 0, size -1, size);
+	re_quick(array, 0, size - 1, size);
 }
