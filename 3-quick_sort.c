@@ -1,51 +1,64 @@
 #include "sort.h"
 
 /**
- *
- *
- *
- *
+ * quick_partition - partition array between low and high index
+ * @array: input array.
+ * @low: index of start of array.
+ * @high: index of end of array.
+ * @size: length of array.
+ * Return: Starting index plus one
  */
 
 int quick_partition(int *array, int low, int high, size_t size)
 {
 	int p = array[high];
 	int i = (low - 1);
-	int j, temp = 0;
+	int j;
 
-	for (j = low; j < high - 1; j++)
+	for (j = low; j < high; j++)
 	{
-		if (array[j] < p)
+		if (array[j] <= p)
 		{
 			i++;
-			swap(&array[i], &array[j]);
-			if (array[j] != array[i])
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
 				print_array(array, size);
+			}
 		}
 	}
-	swap(&array[i + 1], &array[high]);
-	if (array[j] != array[i])
+	if ((i+1) != high)
+	{
+		swap(&array[i + 1], &array[high]);
 		print_array(array, size);
-	temp = i +1;
-	return (temp);
+	}
+	return (i + 1);
 }
 
 
+/**
+ * re_quick - Quick Sort with extra parameter size
+ * @array: input array.
+ * @low: index of start of array
+ * @high: index of end of array
+ * @size: size length of array
+ */
+
 void re_quick(int *array, int low, int high, size_t size)
 {
-	size_t pi = 0;
 
 	if (low < high)
 	{
-		pi = quick_partition(array, low, high, size);
+		int pi = quick_partition(array, low, high, size);
 
 		re_quick(array, low, pi - 1, size);
 		re_quick(array, pi + 1, high, size);
 	}
 }
 
+
 /**
- *
+ * quick_sort - function that sorts an array of integers in ascending order using the Quick sort algorithm
  *
  *
  */
