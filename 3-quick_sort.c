@@ -27,7 +27,7 @@ int quick_partition(int *array, int low, int high, size_t size)
 			}
 		}
 	}
-	if ((i+1) != high)
+	if ((i + 1) != high)
 	{
 		swap(&array[i + 1], &array[high]);
 		print_array(array, size);
@@ -66,7 +66,7 @@ order using the Quick sort algorithm
 
 void quick_sort(int *array, size_t size)
 {
-	if (!array || size <2)
+	if (!array || size < 2)
 		return;
 
 	re_quick(array, 0, size - 1, size);
