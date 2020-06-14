@@ -33,10 +33,7 @@ void quick_sort(int *array, size_t size);
    =========================================*/
 void swap(int *a, int *b);
 int partition(int *array, int low, int high);
-<<<<<<< HEAD
 int quick_partition(int *array, int low, int high, size_t size);
-=======
->>>>>>> 306e1b19e8d195adc38427bf1be8f74122113d4e
 void re_quick(int *array, int low, int high, size_t size);
 
 #endif
