@@ -1,5 +1,22 @@
 #include "sort.h"
 
+
+/**
+ * swap - function to swapping values
+ * @a: value one for swap
+ *
+ * @b: value two for swap
+ */
+
+void swap(int *a, int *b)
+{
+	int temp = *a;
+
+	*a = *b;
+	*b = temp;
+}
+
+
 /**
  * quick_partition - partition array between low and high index
  * @array: input array.
@@ -12,27 +29,25 @@
 int quick_partition(int *array, int low, int high, size_t size)
 {
 	int p = array[high];
-	int i = (low - 1);
+	int i = low;
 	int j;
 
 	for (j = low; j < high; j++)
 	{
 		if (array[j] <= p)
 		{
-			i++;
+			swap(&array[i], &array[j]);
 			if (i != j)
-			{
-				swap(&array[i], &array[j]);
 				print_array(array, size);
-			}
+			i++;
 		}
 	}
-	if ((i + 1) != high)
+	swap(&array[i], &array[high]);
+	if (i != j)
 	{
-		swap(&array[i + 1], &array[high]);
 		print_array(array, size);
 	}
-	return (i + 1);
+	return (i);
 }
 
 
@@ -59,7 +74,7 @@ void re_quick(int *array, int low, int high, size_t size)
 
 /**
  * quick_sort - function that sorts an array of integers in ascending \
-order using the Quick sort algorithm
+ order using the Quick sort algorithm
  * @array: input array
  * @size: size length of array
  */
