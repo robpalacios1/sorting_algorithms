@@ -1,6 +1,9 @@
 #ifndef _SORT_H_
 #define _SORT_H_
 
+/*=======================*/
+/*      LIBRARIES        */
+/*=======================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
